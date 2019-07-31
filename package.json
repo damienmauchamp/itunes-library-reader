@@ -1,0 +1,28 @@
+{
+  "name": "itunes-library-reader",
+  "version": "0.0.1",
+  "description": "TODO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damienmauchamp/itunes-library-reader.git"
+  },
+  "keywords": [
+    "itunes"
+  ],
+  "author": "Damien Mauchamp <damienmauchamp@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damienmauchamp/itunes-library-reader/issues"
+  },
+  "homepage": "https://github.com/damienmauchamp/itunes-library-reader#readme",
+  "dependencies": {
+    "plist": "^3.0.1",
+    "userhome": "^1.0.0"
+  },
+  "devDependencies": {}
+}

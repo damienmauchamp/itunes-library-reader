@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Major Version</key><integer>1</integer>
+	<key>Minor Version</key><integer>1</integer>
+	<key>Application Version</key><string>12.9.4.102</string>
+	<key>Date</key><date>2019-07-10T22:52:56Z</date>
+	<key>Features</key><integer>5</integer>
+	<key>Show Content Ratings</key><true/>
+	<key>Library Persistent ID</key><string>8A56A9D5F8548111</string>
+	<key>Tracks</key>
+	<dict>
+		<!-- ......... -->
+		<key>58213</key>
+		<dict>
+			<key>Track ID</key><integer>58213</integer>
+			<key>Size</key><integer>7602465</integer>
+			<key>Total Time</key><integer>215024</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>1</integer>
+			<key>Track Count</key><integer>1</integer>
+			<key>Year</key><integer>2019</integer>
+			<key>Date Modified</key><date>2019-06-13T19:46:14Z</date>
+			<key>Date Added</key><date>2019-06-13T19:46:14Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Part Of Gapless Album</key><true/>
+			<key>Release Date</key><date>2019-06-13T07:00:00Z</date>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>777DDC39BF7C04DD</string>
+			<key>Explicit</key><true/>
+			<key>Track Type</key><string>Remote</string>
+			<key>Apple Music</key><true/>
+			<key>Name</key><string>Ol' Dirty Bastard</string>
+			<key>Artist</key><string>B.o.B</string>
+			<key>Album Artist</key><string>B.o.B</string>
+			<key>Composer</key><string>Bobby Ray Simmons, Jr.</string>
+			<key>Album</key><string>Ol' Dirty Bastard - Single</string>
+			<key>Genre</key><string>Hip-hop/Rap</string>
+			<key>Kind</key><string>Fichier audio AAC Apple Music</string>
+			<key>Sort Name</key><string>Ol' Dirty Bastard</string>
+			<key>Sort Album</key><string>Ol' Dirty Bastard - Single</string>
+			<key>Sort Artist</key><string>B.o.B</string>
+		</dict>
+		<!-- ......... -->
+	</dict>
+	<key>Playlists</key>
+	<array>
+		<dict>
+			<key>Master</key><true/>
+			<key>Playlist ID</key><integer>64023</integer>
+			<key>Playlist Persistent ID</key><string>55ED015EF1F3AEFE</string>
+			<key>All Items</key><true/>
+			<key>Visible</key><false/>
+			<key>Name</key><string>Bibliothèque</string>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>4289</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>4291</integer>
+				</dict>
+				<!-- ......... -->
+			</array>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>135807</integer>
+			<key>Parent Persistent ID</key><string>3FB1723D5A4AE9FE</string>
+			<key>Playlist Persistent ID</key><string>3D2EEFC2EE93CE29</string>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Singles récents</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAU0xzdAABAAEAAAACAAAAAQAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAADwAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAABEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAg
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUxTTHN0AAEAAQAAAAIAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAEQtri2uLa4trv//////////AAAAAAAoGaAtri2uLa4trgAAAAAAAAAA
+			AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE8BAAAIAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAC0AIABTAGkAbgBnAGwAZQ==
+			</data>
+			<key>Description</key><string>Ajouts récents.</string>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>58213</integer>
+				</dict>
+				<!-- ......... -->
+			</array>
+		</dict>
+		<!-- ......... -->
+	</array>
+	<key>Music Folder</key><string>file://localhost/C:/Users/Asus/Music/iTunes/iTunes%20Media/</string>
+</dict>
+</plist>
