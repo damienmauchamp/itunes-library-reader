@@ -2,6 +2,10 @@ var userhome = require('userhome')
 var path = require('path')
 var fs = require('fs');
 var plist = require('plist');
+const https = require('https');
+const querystring = require('querystring');
+
+let filename = './data.json'
 
 const config = require('./config.js');
 console.log(config)
@@ -34,28 +38,105 @@ var tracks = obj.Tracks
 
 // playlists
 var playlists = obj.Playlists
-var playlistName = 'Singles récents';
 
-var playlist = playlists.find(p => {
-	return p.Name === playlistName
+config.PLAYLISTS.forEach(pl => {
+    run(pl)
 })
-if (playlist) {
-	var items = playlist['Playlist Items'].map(i => {
-		return renameKeys(i);
-	})
-	var playlistTracks = [];
-	items.forEach(track => {
-		if (tracks[track.track_id]) {
-			track_item = renameKeys(tracks[track.track_id]);
-			// itunes api call
-			// .year, .release_date, .name, .artist, .album, .album_artist, explicit
-            // if (track.apple_music)
-			playlistTracks.push(track_item);
-		}
-	})
-	//console.log(JSON.stringify(playlists));
-	console.log(playlistTracks);
+
+var itunesCall = async function(track, entity = 'album') {
+    return new Promise((resolve, reject) => {
+
+// singles
+//https://itunes.apple.com/search?term=B.o.B Ol' Dirty Bastard Ol' Dirty Bastard - Single&country=fr&explicit=Yes&entity=song&callback=
+// albums
+//https://itunes.apple.com/search?term=B.o.B Southmatic&country=fr&explicit=Yes&entity=album&callback=
+
+//?term={{artist}} {{album}}
+//&country=fr
+//&explicit={{explicit}}
+//&entity=(album|song)
+//&callback={{callback}}
+        var options = {
+            hostname: "itunes.apple.com",
+            path: '/search'
+                + '?term=' + querystring.escape(track.album + ' ' + track.artist)
+                + '&country=fr'
+                + '&explicit=' + (track.explicit ? 'Yes' : 'No')
+                + '&entity=' + entity
+                + '&callback=' + '',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0'
+                }
+            };
+
+        var data = '';
+        https.get(options, function(res) {
+            res.on('data', function(chunk) {
+                data += chunk;
+            }).on('end', function() {
+                var json = JSON.parse(data);
+                //console.log(json.resultCount ? json.results[0] : false)
+                console.log('!!!!call: ', track.album + ' by ' + track.artist)
+                resolve(json.resultCount ? json.results[0] : false)
+            });
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+        });
+    })
 }
+
+var checkiTunes = async function(items) {
+        var playlistTracks = [];
+        items.forEach(track => {
+            if (tracks[track.track_id]) {
+                track_item = renameKeys(tracks[track.track_id]);
+                await itunesCall(track_item)
+                .then(async (it) => {
+                    track_item.itunes = it
+                    playlistTracks.push(track_item);
+                })
+                // itunes api call
+                // .year, .release_date, .name, .artist, .album, .album_artist, explicit
+                // if (track.apple_music)
+
+                return playlistTracks
+            }
+        })
+    //return playlistTracks
+}
+
+async function run(playlistName) {
+    //checkiTunes(track_item)
+    var playlist = playlists.find(p => {
+        return p.Name === playlistName
+    })
+    if (playlist) {
+        var items = playlist['Playlist Items'].map(i => {
+            return renameKeys(i);
+        })
+
+        await checkiTunes(items)
+        .then(async (i) => {
+            //console.log(JSON.stringify(playlists));
+            // added_date
+            playlistTracks.push(i);
+            playlistTracks.sort((a, b) => a.release_date - b.release_date);
+
+            const final = {playlist: playlistName, tracks: playlistTracks};
+            console.log(final);
+            writeJSONFile(filename, final)
+        })
+    }
+}
+
+function writeJSONFile(filename, content) {
+    fs.writeFileSync(filename, JSON.stringify(content), 'utf8', (err) => {
+        if (err) {
+            //console.log(err)
+        }
+    })
+}
+
 
 /*
 
@@ -88,9 +169,4 @@ if (playlist) {
     sort_name: 'Ol\' Dirty Bastard',
     sort_album: 'Ol\' Dirty Bastard - Single',
     sort_artist: 'B.o.B' } ]
-
-// singles
-https://itunes.apple.com/search?term=B.o.B Ol' Dirty Bastard Ol' Dirty Bastard - Single&country=fr&explicit=Yes&entity=song&callback=
-// albums
-https://itunes.apple.com/search?term=B.o.B Southmatic&country=fr&explicit=Yes&entity=album&callback=
 */
