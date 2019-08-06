@@ -1,7 +1,10 @@
-//var userhome = require('userhome')
+var userhome = require('userhome')
 var path = require('path')
 var fs = require('fs');
 var plist = require('plist');
+
+const config = require('./config.js');
+console.log(config)
 
 var renameKeys = (obj) => {
 	var keysMap = {};
@@ -19,12 +22,9 @@ var renameKeys = (obj) => {
 		}, {});
 };
 
-//var location = path.resolve('./iTunes Music Library.xml')
-var location = path.resolve('./sample.xml')
-//var location = path.resolve('./sample.xml')
-/*var location = path.resolve(userhome()
+var location = path.resolve(userhome()
   , 'Music/iTunes/iTunes Music Library.xml'
-)*/
+)
 
 var obj = plist.parse(fs.readFileSync(location, 'utf8'));
 //console.log(JSON.stringify(obj));
@@ -49,6 +49,7 @@ if (playlist) {
 			track_item = renameKeys(tracks[track.track_id]);
 			// itunes api call
 			// .year, .release_date, .name, .artist, .album, .album_artist, explicit
+            // if (track.apple_music)
 			playlistTracks.push(track_item);
 		}
 	})
