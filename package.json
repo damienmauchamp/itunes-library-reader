@@ -22,7 +22,7 @@
   "homepage": "https://github.com/damienmauchamp/itunes-library-reader#readme",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "plist": "^3.0.1",
+    "plist": "^3.0.4",
     "userhome": "^1.0.0"
   },
   "devDependencies": {}
